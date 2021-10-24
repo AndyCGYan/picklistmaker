@@ -35,7 +35,10 @@ for m in manifests:
                 query_string += 'project:' + p.attrib['name'] + ' OR '
 query_string = query_string.rstrip(' OR ') + ')'
 
-for id in args.exclude:
-    query_string += ' NOT ' + str(id)
+try:
+    for id in args.exclude:
+        query_string += ' NOT ' + str(id)
+except:
+    pass
 
 print(query_string)
