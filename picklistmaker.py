@@ -29,7 +29,7 @@ for project in projects:
 
 print("#!/bin/bash\n\n# Abort early on error\nset -eE\n")
 
-for project in projects:
+for project in sorted(projects):
     print("## Project: {}\n".format(project))
 
     for change in dict(sorted(changes[project].items(), key=lambda item: item[0])):
